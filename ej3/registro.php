@@ -1,12 +1,11 @@
 <?php
 //Inicio del procesamiento
-session_start();
 
 $tituloPagina = 'Registro';
 
 $contenidoPrincipal = <<<EOS
 <h1>Registro de usuario</h1>
-<form action="procesarRegistro.php" method="POST">
+<form action="procesarRegistrop2.php" method="POST">
 <fieldset>
 	<legend>Datos para el registro</legend>
 	<div>

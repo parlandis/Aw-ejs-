@@ -21,7 +21,7 @@ class Aplicacion {
         if (!$this->inicializada) {
             $this->bdDatosConexion = $bdDatosConexion;
             $this->inicializada = true;
-            session_start();
+           
             
             // Configuración adicional desde tu config.php original
             ini_set('default_charset', 'UTF-8');

@@ -1,5 +1,5 @@
 <?php
-    session_start();
+
 
     require_once __DIR__.'/includes/config.php';
     
@@ -7,7 +7,7 @@
         $usuario = trim($_POST["usuario"]);
         $password = trim($_POST["password"]);
         $email = trim($_POST["email"]);
-        $puntos = trim($_POST["puntos"]);
+       
 
         // Hashear la contraseña
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);

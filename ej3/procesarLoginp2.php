@@ -1,7 +1,5 @@
 <?php
-// Inicio del procesamiento
-
-require_once __DIR__.'/includes/config.php';
+require_once __DIR__.'/includes/config.php'; // Ruta corregida
 
 $formEnviado = isset($_POST['login']);
 if (!$formEnviado) {
@@ -9,8 +7,7 @@ if (!$formEnviado) {
     exit();
 }
 
-require_once __DIR__.'/includes/utils.php';
-
+require_once __DIR__.'/includes/utils.php'; // Ruta corregida
 
 $erroresFormulario = [];
 
@@ -86,4 +83,5 @@ $contenidoPrincipal = <<<EOS
 </form>
 EOS;
 
-require __DIR__.'/includes/vistas/plantillas/plantilla.php';
+require __DIR__.'/includes/vistas/plantillas/plantilla.php'; // Ruta corregida
+?>
