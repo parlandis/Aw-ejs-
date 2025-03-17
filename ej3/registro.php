@@ -1,35 +1,41 @@
 <?php
-//Inicio del procesamiento
-
+// Inicio del procesamiento
+require_once __DIR__.'/includes/config.php';
 $tituloPagina = 'Registro';
+
+// Si hay un error de registro, lo mostramos
+if (isset($_SESSION['error_registro'])) {
+    $errorRegistro = $_SESSION['error_registro'];
+    unset($_SESSION['error_registro']); // Limpiamos el mensaje de error después de mostrarlo
+} else {
+    $errorRegistro = '';
+}
 
 $contenidoPrincipal = <<<EOS
 <h1>Registro de usuario</h1>
-<form action="procesarRegistrop2.php" method="POST">
+<p style="color: red;">{$errorRegistro}</p>
+<form action="procesarRegistro.php" method="POST">
 <fieldset>
-	<legend>Datos para el registro</legend>
-	<div>
-		<label for="nombreUsuario">Nombre de usuario:</label>
-		<input id="usuario" type="text" name="usuario" />
-	</div>
-	<div>
-		<label for="nombre">Nombre:</label>
-		<input id="nombre" type="text" name="nombre" />
-	</div>
-	<div>
-		<label for="password">Contraseña:</label>
-		<input id="password" type="password" name="password" />
-	</div>
-	<div>
-		<label for="password2">Reintroduce el password:</label>
-		<input id="password2" type="password" name="password2" />
-	</div>
+    <legend>Datos para el registro</legend>
+    <div>
+        <label for="username">Nombre de usuario:</label>
+        <input id="username" type="text" name="username" required />
+    </div>
     <div>
         <label for="email">Correo electrónico:</label>
-        <input id="email" type="email" name="email" />
-	<div>
-		<button type="submit" name="registro">Registrar</button>
-	</div>
+        <input id="email" type="email" name="email" required />
+    </div>
+    <div>
+        <label for="password">Contraseña:</label>
+        <input id="password" type="password" name="password" required />
+    </div>
+    <div>
+        <label for="password2">Reintroduce la contraseña:</label>
+        <input id="password2" type="password" name="password2" required />
+    </div>
+    <div>
+        <button type="submit" name="registro">Registrar</button>
+    </div>
 </fieldset>
 </form>
 EOS;
